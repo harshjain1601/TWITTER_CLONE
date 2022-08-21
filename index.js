@@ -54,8 +54,9 @@ app.get('/auth/google', passport.authenticate('google', {
 
 app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/error'}),   // If error, redirect to '/error'
     function(req, res) {
-        findUser();
+        
         res.redirect('/profile');
+        findUser();
     }
 );
 
