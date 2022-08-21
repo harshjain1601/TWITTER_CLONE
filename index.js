@@ -59,11 +59,14 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
     }
 );
 
-app.get('/', (err, res) => {
-    console.log(err);
-    res.render('home');
-});
+// app.get('/', (err, res) => {
+//     //console.log(err);
+//     res.render('home');
+// });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
 app.get('/google/signin', (req, res) => {
     console.log("Signing in \n");
     res.redirect('/auth/google');
