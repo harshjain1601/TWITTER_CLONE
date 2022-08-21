@@ -60,6 +60,7 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
 );
 
 app.get('/', (err, res) => {
+    console.log(err);
     res.render('home');
 });
 

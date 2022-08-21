@@ -1,4 +1,4 @@
-require('dotenv').config({ path: "D:\\Naggaro Internship\\Twiter Clone\\config\\.env"});
+require('dotenv').config({ path: "config\\.env"});
 
 const express = require('express');
 const app = express();
