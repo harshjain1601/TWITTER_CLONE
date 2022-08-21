@@ -1,4 +1,4 @@
-require('dotenv').config({ path: "C:\\nagarro\\nagarro\\twitter-clone\\config\\env" });
+require('dotenv').config({ path: "config\\env" });
 
 const app = require('./config/server');
 const con = require('./config/dbConfig');
@@ -12,8 +12,8 @@ const ejs = require('ejs');
 
 
 app.set('view engine', 'ejs');
-app.set('views', "C:\\nagarro\\nagarro\\twitter-clone\\views\\pages");
-app.use(express.static("C:\\nagarro\\nagarro\\twitter-clone\\views\\partials"));
+app.set('views', "views\\pages");
+app.use(express.static("views\\partials"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(session({
