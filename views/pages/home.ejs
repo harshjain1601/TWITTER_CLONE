@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/homeStyle.css">
+
+    <script src="https://kit.fontawesome.com/40a85485d4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="outercontainer">
+        <div class="splitleft">
+            <img style="position: relative;width:100%;height:100%;"
+                src="https://c4.wallpaperflare.com/wallpaper/1015/143/670/twitter-wallpaper-preview.jpg" alt="not found"> 
+            </div>
+        <div class="splitright">
+            <div id="icon" style="position: relative;width:100%;height:20%">
+                <img style="position: relative;width:10%;margin-top:3%;;height: 55%;margin-left: 5%;border-radius: 100%;"
+                    src="data:image/png;base64,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 "
+                    alt="">
+
+            </div>
+            <div class="content" style="margin-left: 5%;width: 90%;">
+                <h1><b style="font-size: 66px;">Happening now</b></h1>
+                <br>
+                <h4><b style="font-size: 32px;">Join Twitter today.</b></h4>
+                <div id="btnbox">
+                    <a href="/auth/google">
+                    <button type="button" id="btn1"><b style="font-size: 14px;"><i style="color: #bd1100;
+                        font-size: larger;" class="fa-brands fa-google"></i> Sign up with Google</b></button></a>
+                    <button type="button" id="btn2"><b style="font-size: 14px;"><i style="font-size: large;"
+                                class="fa-brands fa-apple"></i> Sign up with Apple</b></button>
+                    <div style="text-align: center;position: relative;">
+                        <hr style="top: -3px;
+                        position: relative;width: 47%;float: left;">or
+                        <hr style="top: -3px;
+                        position: relative;width: 47%;float:right;">
+                    </div>
+                    <button type="button" id="btn3"><b style="font-size: 14px;
+                        color: white;">Sign up with phone or email</b></button>
+                    <p id="p1" style="font-size: 11px; font-family: sans-serif;">By signing up, you agree to the <a
+                            style="color:  #00a1ff;padding-right: 0px;" href="https://twitter.com/en/tos"
+                            target="_blank">Terms of Service</a> and <a style="color:  #00a1ff;padding-right: 0px;"
+                            href="https://twitter.com/en/privacy" target="_blank">Privacy Policy</a>, including <a
+                            style="color:  #00a1ff;padding-right: 0px;"
+                            href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="_blank">Cookie
+                            Use.</a> </p>
+                    <br>
+                    <br>
+                    <h6><b>Already have an account?</b></h6>
+                    <a href="/auth/google"><button type="button" id="btn4"><b style="font-size: 14px;color: blue;">Sign in</b></button></a>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <nav>
+                <a href="https://about.twitter.com/en" target="_blank" rel="noopener noreferrer"><span>About</span></a>
+                <a href="https://help.twitter.com/en" target="_blank" rel="noopener noreferrer"><span>Help Center</span></a>
+                <a href="https://twitter.com/en/tos" target="_blank" rel="noopener noreferrer"><span>Terms of Service</span></a>
+                <a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer"><span>Privacy Policy</span></a>
+                <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="_blank" rel="noopener noreferrer"><span>Cookie Policy</span></a>
+                <a href="https://help.twitter.com/en/resources/accessibility" target="_blank" rel="noopener noreferrer"><span>Accessibility</span></a>
+                <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=adsinfo" target="_blank" rel="noopener noreferrer"><span>Ads Info</span></a>
+                <a href="https://blog.twitter.com/" target="_blank" rel="noopener noreferrer"><span>Blog</span></a>
+                <a href="https://status.twitterstat.us/" target="_blank" rel="noopener noreferrer"><span>Status</span></a>
+                <a href="https://careers.twitter.com/" target="_blank" rel="noopener noreferrer"><span>Careers</span></a>
+                <a href="https://about.twitter.com/en/who-we-are/brand-toolkit" target="_blank" rel="noopener noreferrer"><span>Brand Resources</span></a>
+                <a href="https://ads.twitter.com/login?ref=gl-tw-tw-twitter-advertise" target="_blank" rel="noopener noreferrer"><span>Advertising</span></a>
+                <a href="https://marketing.twitter.com/en" target="_blank" rel="noopener noreferrer"><span>Marketing</span></a>
+                <a href="https://business.twitter.com/?ref=web-twc-ao-gbl-twitterforbusiness&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=twitterforbusiness" target="_blank" rel="noopener noreferrer"><span>Twitter for Business</span></a>
+                <a href="https://developer.twitter.com/en" target="_blank" rel="noopener noreferrer"><span>Developers</span></a>
+                <a href="https://twitter.com/i/directory/profiles" target="_blank" rel="noopener noreferrer"><span>Directory</span></a>
+                <a href="https://twitter.com/settings/account/personalization" rel="noopener noreferrer"><span>Settings</span></a>
+                <span>© 2022 Harsh Jain</span>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
