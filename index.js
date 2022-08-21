@@ -8,12 +8,14 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const express = require('express');
-const ejs = require('ejs');
+// const ejs = require('ejs');
+app.set('view engine','ejs');
+app.set('views','./views/pages');
+app.use(express.static('assets'));
 
-
-app.set('view engine', 'ejs');
-app.set('views', "views\\pages");
-app.use(express.static("views\\partials"));
+// app.set('view engine', 'ejs');
+// app.set('views', "views\\pages");
+app.use(express.static("views/partials"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(session({
@@ -59,14 +61,14 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
     }
 );
 
-// app.get('/', (err, res) => {
-//     //console.log(err);
-//     res.render('home');
-// });
+app.get('/', (err, res) => {
+    //console.log(err);
+    res.render('home');
+});
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+//   })
 app.get('/google/signin', (req, res) => {
     console.log("Signing in \n");
     res.redirect('/auth/google');
