@@ -3,7 +3,7 @@ require('dotenv').config({ path: "D:\\Naggaro Internship\\Twiter Clone\\config\\
 const express = require('express');
 const app = express();
 
-app.listen(process.env.PORT||3306, function(err) {
+app.listen(process.env.PORT||3307, function(err) {
     if(err)
         console.log("Server Down");
     
