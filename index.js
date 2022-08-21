@@ -56,7 +56,7 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
     function(req, res) {
         
         res.redirect('/profile');
-        findUser();
+        //findUser();
     }
 );
 
