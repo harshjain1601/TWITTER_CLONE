@@ -81,23 +81,24 @@ app.get('/signup/apple', (req, res) => {
 });
 
 app.get('/profile', async (req, res) => {
-    const details = userProfile._json;
+    // const details = userProfile._json;
 
-    const username = details.name;
-    const emailId = details.email;
-    const profilePic = details.picture;
+    // const username = details.name;
+    // const emailId = details.email;
+    // const profilePic = details.picture;
 
-    console.log(`User logged in, Username: ${username}, Email ID: ${emailId} \n`);
+    // console.log(`User logged in, Username: ${username}, Email ID: ${emailId} \n`);
 
-    var queryTweets = "SELECT * FROM tweets";
-    con.query(queryTweets, (err, results) => {
-        if(err)
-            console.log(err);
+    // var queryTweets = "SELECT * FROM tweets";
+    // con.query(queryTweets, (err, results) => {
+    //     if(err)
+    //         console.log(err);
 
-        else
-        console.log(results);
-            res.render('user', {tweets: results});
-    });
+    //     else
+    //     console.log(results);
+    //         res.render('user', {tweets: results});
+    // });
+    res.render('/temp');
 });
 
 app.get('/error', (req, res) => res.send("Error logging in."));
