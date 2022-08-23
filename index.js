@@ -37,8 +37,8 @@ var userProfile;
 passport.use(new GoogleStratergy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-       //callbackURL: `http://localhost:${process.env.SERVER_PORT}/auth/google/callback`
-       callbackURL: `https://twitterclone-nagarro.herokuapp.com/auth/google/callback`
+       callbackURL: `http://localhost:${process.env.SERVER_PORT}/auth/google/callback`
+       //callbackURL: `https://twitterclone-nagarro.herokuapp.com/auth/google/callback`
     },
 
     function(accessToken, refreshToken, profile, done) {
@@ -55,7 +55,7 @@ app.get('/auth/google', passport.authenticate('google', {
 app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/error'}),   // If error, redirect to '/error'
     function(req, res) {
         
-        //findUser();
+        findUser();
 
         res.redirect('/profile');
             }
@@ -81,24 +81,24 @@ app.get('/signup/apple', (req, res) => {
 });
 
 app.get('/profile', async (req, res) => {
-    // const details = userProfile._json;
+    const details = userProfile._json;
 
-    // const username = details.name;
-    // const emailId = details.email;
-    // const profilePic = details.picture;
+    const username = details.username;
+    const emailId = details.emailId;
+    const profilePic = details.picture;
 
-    // console.log(`User logged in, Username: ${username}, Email ID: ${emailId} \n`);
+    console.log(`User logged in, Username: ${username}, Email ID: ${emailId} \n`);
 
-    // var queryTweets = "SELECT * FROM tweets";
-    // con.query(queryTweets, (err, results) => {
-    //     if(err)
-    //         console.log(err);
+    var queryTweets = "SELECT * FROM tweets";
+    con.query(queryTweets, (err, results) => {
+        if(err)
+            console.log(err);
 
-    //     else
-    //     console.log(results);
-    //         res.render('user', {tweets: results});
-    // });
-    res.render('/temp');
+        else
+        console.log(results);
+            res.render('user', {tweets: results});
+    });
+   
 });
 
 app.get('/error', (req, res) => res.send("Error logging in."));
